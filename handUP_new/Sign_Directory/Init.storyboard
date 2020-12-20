@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sWh-2v-T7b">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="BMJUA_otf.otf">
+            <string>BMJUAOTF</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Init View Controller-->
+        <scene sceneID="bxj-G9-apS">
+            <objects>
+                <viewController storyboardIdentifier="InitViewController" id="bTb-au-URt" customClass="initViewController" customModule="handUP_new" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sva-r8-zjE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="handUpLogo_sky" translatesAutoresizingMaskIntoConstraints="NO" id="FSN-Ic-clS">
+                                <rect key="frame" x="129" y="306" width="156" height="156"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="AKj-M2-2qz"/>
+                                    <constraint firstAttribute="height" constant="156" id="ogH-fj-21F"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선생님,질문있어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEt-XW-hyT">
+                                <rect key="frame" x="123" y="463" width="168" height="24"/>
+                                <fontDescription key="fontDescription" name="BMJUAOTF" family="BM JUA_OTF" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xsC-Ee-imi">
+                                <rect key="frame" x="35" y="826" width="344" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="EsX-mn-Ujq"/>
+                                </constraints>
+                                <state key="normal" title="처음 방문이신가요? 여기를 클릭해주세요">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="처음 방문이신가요? ">
+                                            <attributes>
+                                                <color key="NSColor" systemColor="darkTextColor"/>
+                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="여기를 클릭해주세요">
+                                            <attributes>
+                                                <color key="NSColor" red="0.18823529411764706" green="0.74117647058823533" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="E5z-MU-ddS" kind="presentation" modalPresentationStyle="fullScreen" id="bJI-gw-jeb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROR-Dk-mAX">
+                                <rect key="frame" x="35" y="602" width="344" height="58"/>
+                                <color key="backgroundColor" red="0.18823529410000001" green="0.74117647060000003" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="tUH-8I-tlg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="시작하기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="E5z-MU-ddS" kind="presentation" identifier="segueForSign" modalPresentationStyle="fullScreen" id="boL-uT-mSX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7S-qF-mk5">
+                                <rect key="frame" x="35" y="676" width="344" height="30"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="로그인">
+                                    <color key="titleColor" red="0.18823529410000001" green="0.74117647060000003" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="UWT-bZ-ZCc" kind="presentation" identifier="segueForLogIn" modalPresentationStyle="fullScreen" id="wQK-NK-dMT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MLO-N7-XLk"/>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98431372549019602" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="v7S-qF-mk5" firstAttribute="leading" secondItem="ROR-Dk-mAX" secondAttribute="leading" id="0OT-yg-n9X"/>
+                            <constraint firstItem="MLO-N7-XLk" firstAttribute="trailing" secondItem="ROR-Dk-mAX" secondAttribute="trailing" constant="35" id="21J-rj-89o"/>
+                            <constraint firstItem="MLO-N7-XLk" firstAttribute="bottom" secondItem="xsC-Ee-imi" secondAttribute="bottom" constant="10" id="AFn-2V-LVg"/>
+                            <constraint firstItem="bEt-XW-hyT" firstAttribute="centerX" secondItem="MLO-N7-XLk" secondAttribute="centerX" id="Gvt-Sb-v4Y"/>
+                            <constraint firstItem="v7S-qF-mk5" firstAttribute="height" secondItem="ROR-Dk-mAX" secondAttribute="height" multiplier="0.517241" id="HWB-eo-dzU"/>
+                            <constraint firstItem="xsC-Ee-imi" firstAttribute="top" secondItem="v7S-qF-mk5" secondAttribute="bottom" constant="120" id="WwA-ys-dyB"/>
+                            <constraint firstItem="bEt-XW-hyT" firstAttribute="centerX" secondItem="FSN-Ic-clS" secondAttribute="centerX" id="XEH-AU-Art"/>
+                            <constraint firstItem="xsC-Ee-imi" firstAttribute="leading" secondItem="MLO-N7-XLk" secondAttribute="leading" constant="35" id="XZL-G5-Rgv"/>
+                            <constraint firstItem="bEt-XW-hyT" firstAttribute="centerY" secondItem="MLO-N7-XLk" secondAttribute="centerY" id="cVu-DT-xlU"/>
+                            <constraint firstItem="ROR-Dk-mAX" firstAttribute="leading" secondItem="MLO-N7-XLk" secondAttribute="leading" constant="35" id="hA5-lR-j7G"/>
+                            <constraint firstItem="v7S-qF-mk5" firstAttribute="top" secondItem="ROR-Dk-mAX" secondAttribute="bottom" constant="16" id="hSi-9d-L67"/>
+                            <constraint firstItem="FSN-Ic-clS" firstAttribute="centerX" secondItem="MLO-N7-XLk" secondAttribute="centerX" id="iHC-yc-VKL"/>
+                            <constraint firstItem="MLO-N7-XLk" firstAttribute="trailing" secondItem="xsC-Ee-imi" secondAttribute="trailing" constant="35" id="koM-yX-LNf"/>
+                            <constraint firstItem="bEt-XW-hyT" firstAttribute="top" secondItem="FSN-Ic-clS" secondAttribute="bottom" constant="1" id="qL8-S7-rFS"/>
+                            <constraint firstItem="v7S-qF-mk5" firstAttribute="trailing" secondItem="ROR-Dk-mAX" secondAttribute="trailing" id="w3F-Zz-TDp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jhU-vj-lHG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ya1-g6-qEk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876.81159420289862" y="160.71428571428569"/>
+        </scene>
+        <!--SignUPInitViewController-->
+        <scene sceneID="loI-pq-QIp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SingUP" referencedIdentifier="SignUPInitViewController" id="E5z-MU-ddS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="PYc-Ne-I0e"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ykk-Qk-CQC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591" y="338"/>
+        </scene>
+        <!--LogInViewController-->
+        <scene sceneID="I4A-SR-blW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LogIn" referencedIdentifier="LogInViewController" id="UWT-bZ-ZCc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="IYp-MX-FeD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EXV-se-SeG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1567" y="178"/>
+        </scene>
+        <!--Init Navigation View Controller-->
+        <scene sceneID="w1j-oI-dYq">
+            <objects>
+                <navigationController storyboardIdentifier="InitNavigationViewController" wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" id="sWh-2v-T7b" customClass="InitNavigationViewController" customModule="handUP_new" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zm8-Bh-upK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bTb-au-URt" kind="relationship" relationship="rootViewController" id="KDO-x8-0pR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="96z-KV-ddE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-33.333333333333336" y="160.71428571428569"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bJI-gw-jeb"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="handUpLogo_sky" width="136" height="128.33332824707031"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E5u-7e-bCy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Incurious Question Alert View Controller-->
+        <scene sceneID="K3j-fT-YPs">
+            <objects>
+                <viewController storyboardIdentifier="IncuriousQuestionAlertViewController" id="E5u-7e-bCy" customClass="IncuriousQuestionAlertViewController" customModule="handUP_new" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K5v-ol-v26">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_Large" translatesAutoresizingMaskIntoConstraints="NO" id="Ouw-bj-FuP">
+                                <rect key="frame" x="147" y="413" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="EKN-Ya-EWE"/>
+                                    <constraint firstAttribute="height" constant="120" id="dxg-5Z-wV8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="질문이 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5g-mx-qJJ">
+                                <rect key="frame" x="107" y="310" width="200" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="27c-ZN-Pki"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDT-W4-t5k">
+                                <rect key="frame" x="6" y="766" width="402" height="50"/>
+                                <color key="backgroundColor" red="0.18823529410000001" green="0.74117647060000003" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7Hv-Jr-dEO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                <state key="normal" title="질문보러가기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="touchUpToAction:" destination="E5u-7e-bCy" eventType="touchUpInside" id="kqS-aq-tgZ"/>
+                                    <segue destination="xGu-v5-JmT" kind="show" identifier="segueForMainTabBarController" id="PnA-HG-Lnr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="질문이 없습니다. 아래 질문보러가기 버튼을 눌러 다른 사람들이 한 질문들을 봅시다!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2U-iX-Sn0">
+                                <rect key="frame" x="105" y="296" width="205" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="pci-mX-IGp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tP2-WA-d6v"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="s2U-iX-Sn0" firstAttribute="centerX" secondItem="Ouw-bj-FuP" secondAttribute="centerX" id="3H8-MQ-Ow9"/>
+                            <constraint firstItem="s2U-iX-Sn0" firstAttribute="width" secondItem="j5g-mx-qJJ" secondAttribute="width" multiplier="1.17143" id="4Hb-qB-gW0"/>
+                            <constraint firstItem="j5g-mx-qJJ" firstAttribute="centerX" secondItem="s2U-iX-Sn0" secondAttribute="centerX" id="KiV-wc-8IB"/>
+                            <constraint firstItem="s2U-iX-Sn0" firstAttribute="top" secondItem="j5g-mx-qJJ" secondAttribute="bottom" constant="10" id="LkO-f0-XtZ"/>
+                            <constraint firstItem="Ouw-bj-FuP" firstAttribute="top" secondItem="s2U-iX-Sn0" secondAttribute="bottom" constant="25" id="eLa-SX-jY4"/>
+                            <constraint firstItem="tP2-WA-d6v" firstAttribute="bottom" secondItem="oDT-W4-t5k" secondAttribute="bottom" constant="46" id="hSq-cT-3Et"/>
+                            <constraint firstItem="Ouw-bj-FuP" firstAttribute="centerX" secondItem="tP2-WA-d6v" secondAttribute="centerX" id="jV1-TZ-Gch"/>
+                            <constraint firstItem="tP2-WA-d6v" firstAttribute="trailing" secondItem="oDT-W4-t5k" secondAttribute="trailing" constant="6" id="kzT-Nq-r85"/>
+                            <constraint firstItem="oDT-W4-t5k" firstAttribute="leading" secondItem="tP2-WA-d6v" secondAttribute="leading" constant="6" id="nM2-es-BIn"/>
+                            <constraint firstItem="Ouw-bj-FuP" firstAttribute="centerY" secondItem="tP2-WA-d6v" secondAttribute="centerY" constant="20" id="ora-Wt-X0C"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonToAction" destination="oDT-W4-t5k" id="wB2-c6-aLA"/>
+                        <outlet property="labelToContents" destination="s2U-iX-Sn0" id="Oof-cz-iwr"/>
+                        <outlet property="labelToHeadLine" destination="j5g-mx-qJJ" id="Fth-PQ-JbY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kWa-8c-J40" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="289.85507246376812" y="96.428571428571431"/>
+        </scene>
+        <!--MainTabBarController-->
+        <scene sceneID="YDX-wS-P2B">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="MainTabBarController" id="xGu-v5-JmT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="YiA-Qb-Il4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wai-Mo-VeA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005" y="29"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="search_Large" width="105.33333587646484" height="105.33333587646484"/>
+    </resources>
+</document>

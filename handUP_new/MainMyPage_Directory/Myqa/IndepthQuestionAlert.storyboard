@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bfm-pp-ec1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Indepth Question Alert View Controller-->
+        <scene sceneID="krr-D7-qVc">
+            <objects>
+                <viewController storyboardIdentifier="IndepthQuestionAlertViewController" id="bfm-pp-ec1" customClass="IndepthQuestionAlertViewController" customModule="handUP_new" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IjM-a9-CGr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fee-SG-2Tx">
+                                <rect key="frame" x="6" y="766" width="402" height="50"/>
+                                <color key="backgroundColor" red="0.18823529410000001" green="0.74117647060000003" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8Ad-ag-yQD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                <state key="normal" title="1대1 질문하기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="touchUpToAction:" destination="bfm-pp-ec1" eventType="touchUpInside" id="tEN-Zz-znI"/>
+                                    <segue destination="LPG-Yt-uHd" kind="show" identifier="segueForMainTabBarController" id="CVO-ms-3ec"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_Large" translatesAutoresizingMaskIntoConstraints="NO" id="wdS-yx-iwe">
+                                <rect key="frame" x="147" y="413" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="amy-sD-Aef"/>
+                                    <constraint firstAttribute="height" constant="120" id="pq1-n4-t6F"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금까지 1대1 질문을 한 적이 없습니다. 아래 1대1 질문하기 버튼을 눌러 질문을 해봅시다!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCi-UL-dMf">
+                                <rect key="frame" x="78" y="344" width="258" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="wGJ-HT-Epd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="13"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1대1 질문을 한 적 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gz4-W4-ciI">
+                                <rect key="frame" x="107" y="312" width="216" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="v7H-oN-yAS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1ub-UM-OAe"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wdS-yx-iwe" firstAttribute="centerX" secondItem="1ub-UM-OAe" secondAttribute="centerX" id="0Vj-xA-U77"/>
+                            <constraint firstItem="1ub-UM-OAe" firstAttribute="trailing" secondItem="fee-SG-2Tx" secondAttribute="trailing" constant="6" id="7xl-R6-fYN"/>
+                            <constraint firstItem="fee-SG-2Tx" firstAttribute="leading" secondItem="1ub-UM-OAe" secondAttribute="leading" constant="6" id="9rP-gX-cWo"/>
+                            <constraint firstItem="1ub-UM-OAe" firstAttribute="bottom" secondItem="fee-SG-2Tx" secondAttribute="bottom" constant="46" id="IVm-LO-IeC"/>
+                            <constraint firstItem="wdS-yx-iwe" firstAttribute="top" secondItem="qCi-UL-dMf" secondAttribute="bottom" constant="25" id="R8v-KR-0Hu"/>
+                            <constraint firstItem="wdS-yx-iwe" firstAttribute="centerY" secondItem="1ub-UM-OAe" secondAttribute="centerY" constant="20" id="VS8-cK-mX8"/>
+                            <constraint firstItem="qCi-UL-dMf" firstAttribute="centerX" secondItem="wdS-yx-iwe" secondAttribute="centerX" id="cTW-AD-HI9"/>
+                            <constraint firstItem="qCi-UL-dMf" firstAttribute="top" secondItem="gz4-W4-ciI" secondAttribute="bottom" constant="10" id="jqn-wE-XDC"/>
+                            <constraint firstItem="gz4-W4-ciI" firstAttribute="centerX" secondItem="qCi-UL-dMf" secondAttribute="centerX" id="rZO-2P-McI"/>
+                            <constraint firstItem="qCi-UL-dMf" firstAttribute="width" secondItem="gz4-W4-ciI" secondAttribute="width" multiplier="1.17143" id="tAY-TD-dgx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonToAction" destination="fee-SG-2Tx" id="Dr0-9H-Hd4"/>
+                        <outlet property="labelToContents" destination="qCi-UL-dMf" id="gB7-Sd-bkf"/>
+                        <outlet property="labelToHeadLine" destination="gz4-W4-ciI" id="pJv-x2-kwy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x6r-73-cwg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="398.55072463768118" y="99.776785714285708"/>
+        </scene>
+        <!--MainTabBarController-->
+        <scene sceneID="IZT-R1-Wk7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="MainTabBarController" id="LPG-Yt-uHd" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kBc-bg-bQO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Dj-AJ-p2D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050" y="39"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="search_Large" width="105.33333587646484" height="105.33333587646484"/>
+    </resources>
+</document>

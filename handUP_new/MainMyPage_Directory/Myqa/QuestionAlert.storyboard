@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="utX-9u-YKi">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Question Alert View Controller-->
+        <scene sceneID="Sxr-ZL-62t">
+            <objects>
+                <viewController storyboardIdentifier="QuestionAlertViewController" id="utX-9u-YKi" customClass="QuestionAlertViewController" customModule="handUP_new" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nq8-3T-UKt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_Large" translatesAutoresizingMaskIntoConstraints="NO" id="AQS-py-q6U">
+                                <rect key="frame" x="147" y="413" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Sf8-OV-Vnw"/>
+                                    <constraint firstAttribute="width" constant="120" id="y1e-RZ-1nN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 한 질문이 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-eZ-Wf7">
+                                <rect key="frame" x="107" y="310" width="200" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="NQb-kE-G4i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9U5-UC-WEe">
+                                <rect key="frame" x="6" y="766" width="402" height="50"/>
+                                <color key="backgroundColor" red="0.18823529410000001" green="0.74117647060000003" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="qn3-iv-3za"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                <state key="normal" title="질문하기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="touchUpToAction:" destination="utX-9u-YKi" eventType="touchUpInside" id="SVw-sf-DaM"/>
+                                    <segue destination="Oc5-JJ-wPf" kind="show" identifier="segueForMainTabBarController" id="npL-3J-PYH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금까지 한 질문이 없습니다. 아래 질문하기 버튼을 눌러 질문을 해봅시다!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCi-hC-JyR">
+                                <rect key="frame" x="90" y="344" width="234" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WzS-g6-V45"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="13"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HI9-nF-lPD"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AQS-py-q6U" firstAttribute="centerX" secondItem="HI9-nF-lPD" secondAttribute="centerX" id="16o-6Q-jDm"/>
+                            <constraint firstItem="HI9-nF-lPD" firstAttribute="bottom" secondItem="9U5-UC-WEe" secondAttribute="bottom" constant="46" id="1w7-Oj-wwT"/>
+                            <constraint firstItem="CCi-hC-JyR" firstAttribute="top" secondItem="2Ne-eZ-Wf7" secondAttribute="bottom" constant="10" id="7WD-vP-RZN"/>
+                            <constraint firstItem="AQS-py-q6U" firstAttribute="centerY" secondItem="HI9-nF-lPD" secondAttribute="centerY" constant="20" id="KQB-RI-5Pk"/>
+                            <constraint firstItem="CCi-hC-JyR" firstAttribute="centerX" secondItem="AQS-py-q6U" secondAttribute="centerX" id="R00-0M-958"/>
+                            <constraint firstItem="AQS-py-q6U" firstAttribute="top" secondItem="CCi-hC-JyR" secondAttribute="bottom" constant="25" id="XjM-AG-na6"/>
+                            <constraint firstItem="CCi-hC-JyR" firstAttribute="width" secondItem="2Ne-eZ-Wf7" secondAttribute="width" multiplier="1.17143" id="bFn-wy-Tei"/>
+                            <constraint firstItem="2Ne-eZ-Wf7" firstAttribute="centerX" secondItem="CCi-hC-JyR" secondAttribute="centerX" id="hE7-lU-EsR"/>
+                            <constraint firstItem="9U5-UC-WEe" firstAttribute="leading" secondItem="HI9-nF-lPD" secondAttribute="leading" constant="6" id="weM-ly-iyv"/>
+                            <constraint firstItem="HI9-nF-lPD" firstAttribute="trailing" secondItem="9U5-UC-WEe" secondAttribute="trailing" constant="6" id="y5S-HS-g2b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonToAction" destination="9U5-UC-WEe" id="Dnd-99-lbr"/>
+                        <outlet property="labelToContents" destination="CCi-hC-JyR" id="c2Q-3S-kZq"/>
+                        <outlet property="labelToHeadLine" destination="2Ne-eZ-Wf7" id="TzZ-Sv-KnM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aoX-eQ-BgA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="84"/>
+        </scene>
+        <!--MainTabBarController-->
+        <scene sceneID="Zkf-jd-IUK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="MainTabBarController" id="Oc5-JJ-wPf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Vki-JS-i4A"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xPg-EA-lB4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="883" y="-20"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="search_Large" width="105.33333587646484" height="105.33333587646484"/>
+    </resources>
+</document>

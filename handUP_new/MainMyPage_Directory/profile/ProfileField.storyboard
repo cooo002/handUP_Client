@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oWV-fv-ZcM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile Field View Controller-->
+        <scene sceneID="Jmy-ac-v4t">
+            <objects>
+                <viewController storyboardIdentifier="ProfileFieldViewController" id="oWV-fv-ZcM" customClass="ProfileFieldViewController" customModule="handUP_new" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qen-rU-vgF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qz-AX-qhy">
+                                <rect key="frame" x="15" y="829" width="379" height="14"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="5" id="Erq-hi-mEk"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="입력한 정보는 ">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="AppleSDGothicNeo-Regular"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.12549019607843137" green="0.64313725490196083" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="handUP">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.18823529411764706" green="0.74117647058823533" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="AppleSDGothicNeo-Regular"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.12549019607843137" green="0.64313725490196083" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" 서비스내 프로필 공개 및 현직자 답변 서비스에 사용될 예정입니다. 언제든 직접 삭제 가능하고 탈퇴시 바로 폐기됩니다.">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="AppleSDGothicNeo-Regular"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.12549019607843137" green="0.64313725490196083" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주요활동분야" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg0-de-I55">
+                                <rect key="frame" x="20" y="79" width="89" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="답변한 질문들을 기반으로 설정할 수 있으면, 프로필에 노출되어 자신의 대표 활동 분야를 나타냅니다. 프로필에는 상위 활동 분야 3개만 노출됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5m-zA-LOJ">
+                                <rect key="frame" x="49" y="129" width="345" height="16"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="3PD-7M-RAA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kv9-yL-VBY">
+                                <rect key="frame" x="20" y="805" width="374" height="1"/>
+                                <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.26102311639999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="BoY-06-RZL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dXM-M2-si1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dXM-M2-si1" firstAttribute="trailing" secondItem="a5m-zA-LOJ" secondAttribute="trailing" constant="20" id="3cj-ZW-0Ho"/>
+                            <constraint firstItem="a5m-zA-LOJ" firstAttribute="top" secondItem="zg0-de-I55" secondAttribute="bottom" constant="15" id="6EM-aU-ab5"/>
+                            <constraint firstItem="a5m-zA-LOJ" firstAttribute="leading" secondItem="zg0-de-I55" secondAttribute="leading" id="6uC-DN-Njc"/>
+                            <constraint firstItem="7qz-AX-qhy" firstAttribute="top" secondItem="Kv9-yL-VBY" secondAttribute="bottom" constant="10" id="9OV-wL-KVZ"/>
+                            <constraint firstItem="Kv9-yL-VBY" firstAttribute="leading" secondItem="dXM-M2-si1" secondAttribute="leading" constant="20" id="Jr6-n0-Dyz"/>
+                            <constraint firstItem="zg0-de-I55" firstAttribute="leading" secondItem="dXM-M2-si1" secondAttribute="leading" constant="20" id="PbK-Zr-SOY"/>
+                            <constraint firstItem="zg0-de-I55" firstAttribute="top" secondItem="dXM-M2-si1" secondAttribute="top" constant="35" id="bSV-N1-8Po"/>
+                            <constraint firstItem="dXM-M2-si1" firstAttribute="bottom" secondItem="7qz-AX-qhy" secondAttribute="bottom" constant="19.5" id="dpp-52-xWA"/>
+                            <constraint firstItem="dXM-M2-si1" firstAttribute="trailing" secondItem="7qz-AX-qhy" secondAttribute="trailing" constant="15" id="j6y-PQ-vyf"/>
+                            <constraint firstItem="7qz-AX-qhy" firstAttribute="leading" secondItem="dXM-M2-si1" secondAttribute="leading" constant="15" id="llr-FK-yUR"/>
+                            <constraint firstItem="dXM-M2-si1" firstAttribute="trailing" secondItem="Kv9-yL-VBY" secondAttribute="trailing" constant="20" id="mVb-OM-UzM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k9R-B6-1gB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="85.507246376811594" y="104.46428571428571"/>
+        </scene>
+    </scenes>
+</document>
