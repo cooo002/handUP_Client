@@ -29,6 +29,7 @@ class QuestionDetailCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var labelToNumOfQuestionUserAsking: UILabel!
     
+    @IBOutlet weak var labelToNumOfAnswer: UILabel!
     @IBOutlet weak var labelToQuestionContents: UILabel!
     
     @IBOutlet weak var labelToQuestionKeyWordFirst: UILabel!

@@ -346,6 +346,7 @@
                                             <outlet property="constraintToTopViewHeight" destination="ulR-8D-iXj" id="tbt-Y1-XyP"/>
                                             <outlet property="imageViewToQuestionUserProfileImg" destination="zXz-0R-Uwr" id="LGu-eo-fyY"/>
                                             <outlet property="labelToDate" destination="Sfi-Kw-NWo" id="y3g-Zj-nv7"/>
+                                            <outlet property="labelToNumOfAnswer" destination="UuY-a0-4M5" id="DtS-Tx-8jm"/>
                                             <outlet property="labelToNumOfQuestionUserAsking" destination="Ymr-zj-pL4" id="WNC-y2-M4b"/>
                                             <outlet property="labelToQuestionContents" destination="2i8-BW-gG3" id="HH4-8m-8LP"/>
                                             <outlet property="labelToQuestionHeadLine" destination="1Qa-km-4Y5" id="EKr-kj-7iN"/>

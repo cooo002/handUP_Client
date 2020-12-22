@@ -26,7 +26,9 @@ class QuestionDetailViewController: UIViewController {
     var questionInfos : [String:Any]?
     var answerUID : String?
     var answerInfos : [QueryDocumentSnapshot]?
-    var numOfTotalCell = 4
+    var numOfTotalCell = 1 //처음에는 해당 질문만 존재하기 때문에 cell의 갯수를 1로 할당
+    var numOfAnserInfos : Int?
+
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
@@ -84,7 +86,7 @@ class QuestionDetailViewController: UIViewController {
 extension QuestionDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("-collectionView numberOfItemsInSection init-")
-        guard var numOfAnserCell = self.answerInfos else{
+        guard self.answerInfos != nil else{
             return self.numOfTotalCell
         }
         self.numOfTotalCell = self.answerInfos!.count + 2
@@ -100,76 +102,55 @@ extension QuestionDetailViewController: UICollectionViewDataSource, UICollection
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuestionDetailCollectionViewCell", for: indexPath) as? QuestionDetailCollectionViewCell else{
                 return UICollectionViewCell()
             }
-            var cellTextViewHeight = (cell.labelToQuestionContents.bounds.height)
-            var cellTopViewHeight = (cell.viewToTop.bounds.height)
-            var cellBottomHeight = (cell.viewToBottom.bounds.height)
-            var flexibleSpacing = CGFloat(integerLiteral: 40)
-            var cellWidth = collectionView.bounds.width
-            let cellHegiht = cellBottomHeight + cellTopViewHeight + cellTextViewHeight + flexibleSpacing
-            cell.bounds.size.height = cellHegiht
-            guard (questionInfos != nil) else{
+            guard let keywords = self.questionInfos?["keyword"] as? [String], (questionInfos != nil) else{
                 return cell
             }
-            
-            let keywords = self.questionInfos?["keyword"] as? [String]
-            
+        
             cell.labelToQuestionContents.text = self.questionInfos?["contents"] as? String ?? ""
             cell.labelToQuestionHeadLine.text = self.questionInfos?["title"] as? String ?? ""
             cell.labelToNumOfQuestionUserAsking.text = self.questionInfos?["questions"] as? String ?? ""
             cell.labelToQuestionUserID.text = self.questionInfos?["writerEmail"] as? String ?? ""
             cell.labelToDate.text =  self.questionInfos?["date"] as? String ?? ""
-            cell.labelToQuestionKeyWordFirst.text = keywords?[0] ?? ""
-            cell.labelToQuestionKeyWordSecond.text = keywords?[1] ?? ""
-            cell.labelToQuestionKeyWordThird.text = keywords?[2] ?? ""
+            cell.labelToNumOfAnswer.text = "\(self.numOfAnserInfos ?? 0)개의 질문이 있습니다."
+            cell.labelToQuestionKeyWordFirst.text = keywords[0] ?? ""
+            cell.labelToQuestionKeyWordSecond.text = keywords[1] ?? ""
+            cell.labelToQuestionKeyWordThird.text = keywords[2] ?? ""
             return cell
         }//cell 2(연관질문)
         else if indexPath.row == rowOfLastIndexPath{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuestionDetailRelationCollectionViewCell", for: indexPath) as? QuestionDetailRelationCollectionViewCell else{
                 return UICollectionViewCell()
             }
-            
             return cell
         }//cell 3(답변)
         else{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuestionDetailAnswerCollectionViewCell", for: indexPath) as? QuestionDetailAnswerCollectionViewCell else{
                 return UICollectionViewCell()
             }
-            guard var answerInfosArr = self.answerInfos else{
+            print("QuestionDetailAnswerCollectionViewCell init --->")
+            guard var answerInfosArr = self.answerInfos, answerInfos != nil else{
                 print("data checking!!!")
                 return cell
             }
-            if answerInfosArr.count == 0{
-                cell.labelToAnswerUserMajorField.text = ""
-                cell.labelToDate.text =  "1시간전"
-                cell.labelToAnswerUserID.text = ""
-                cell.labelToAnswerContents.text = " "
-                cell.buttonClick = {
-                    let alert = UIAlertController(title: " 확인", message: "현재 1대1 질문하기 기능은 점검 때문에 사용할 수 없습니다ㅠㅠ", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                }
-                return cell
+            var row = indexPath.row - 1
+            cell.labelToAnswerUserMajorField.text = "testing"
+            cell.labelToDate.text =  answerInfosArr[row]["date"] as? String
+            cell.labelToAnswerUserID.text = answerInfosArr[row]["writerEmail"] as? String
+            cell.labelToAnswerContents.text =  answerInfosArr[row]["contents"] as? String
+            cell.buttonClick = {
+                let alert = UIAlertController(title: " 확인", message: "현재 1대1 질문하기 기능은 점검 때문에 사용할 수 없습니다ㅠㅠ", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
-            else{
-                var row = indexPath.row - 1
-                cell.labelToAnswerUserMajorField.text = "testing"
-                cell.labelToDate.text =  answerInfosArr[row]["date"] as? String
-                cell.labelToAnswerUserID.text = answerInfosArr[row]["writerEmail"] as? String
-                cell.labelToAnswerContents.text =  answerInfosArr[row]["contents"] as? String
-                cell.buttonClick = {
-                    let alert = UIAlertController(title: " 확인", message: "현재 1대1 질문하기 기능은 점검 때문에 사용할 수 없습니다ㅠㅠ", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                }
-                return cell
-            }
+//            self.mainCollectionView.reloadItems(at: [IndexPath(item: 0, section: 0)])
+            return cell
         }
     }
 }
 
 extension QuestionDetailViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {        
-        var rowOfLastIndexPath = 3
+        var rowOfLastIndexPath = self.numOfTotalCell - 1
         var cellWidth = collectionView.bounds.width
         var cellHegiht : CGFloat!
         //cell 1(질문)
@@ -198,7 +179,6 @@ extension QuestionDetailViewController: UICollectionViewDelegateFlowLayout{
         }
         return CGSize(width: cellWidth, height: cellHegiht)
     }
-    
 }
 
 extension QuestionDetailViewController{
@@ -238,20 +218,28 @@ extension QuestionDetailViewController{
     func receivedAnswerInfosFromFireStore(){
         // answerInfos데이터 땡겨오고, Notification 등록, questionUID
         // answerInfos는 답변이 계속 달리니 리스너로 구성!
+        // 질문에 답변이 달려있지 않은 경유 생각!!
+        
         var db = Firestore.firestore()
         var uid = Auth.auth().currentUser?.uid
         var reloadAnswerInfosTempArr = [QueryDocumentSnapshot]()
         var documentIDTempArr = [String]()
-        var answerDataPath = db.collection("questionRelation").document(self.questionUID!).collection("answer").order(by: "date", descending: false)
-        
-        answerDataPath.addSnapshotListener { querySnapshot, error in
-            guard let documents = querySnapshot?.documents else {
-                print("Error fetching documents: \(error!)")
+        var answerDataPath = db.collection("questionRelation").document(self.questionUID!).collection("answer")
+        answerDataPath.order(by: "date", descending: false).addSnapshotListener { querySnapshot, error in
+            guard (error == nil) else {
+                print("AnswerInfos Testing error  -> \(error)")
                 return
             }
+            print("AnswerInfos Testing error?  -> \(error)")
             
-            print("AnswerInfos Testing  -> \(documents[0])")
+            guard let documents = querySnapshot?.documents, documents.isEmpty == false else {
+                print("answerInfos Documents -> \(querySnapshot?.documents)")
+                //값이 없으면 빈 배열 넘김
+                return
+            }
+            print("answerInfos Documents castingValue -> \(documents)")
             NotificationCenter.default.post(name: .answerInfoDidRoad , object: nil, userInfo: ["answerInfos":documents])
+            
         }
     }
     
@@ -261,23 +249,26 @@ extension QuestionDetailViewController{
             return
         }
         self.questionInfos = data
-        
-        
         DispatchQueue.main.async {
             // collectionView reload
             self.mainCollectionView.reloadData()
+            // 여기서 reloadData 하지 않으면 questin관련 셀 재사용 안됨
         }
     }
     
     @objc func actionToReloadCollectionVieWhenAnswerInfosRoad(notification: NSNotification){
         // answerInfos 데이터 땡겨오고(Arr로 구성), Notification 등록
-        // answerReload 참고
-        guard let data = notification.userInfo?["answerInfos"]  as? [QueryDocumentSnapshot] else{
+        guard let data = notification.userInfo?["answerInfos"]  as? [QueryDocumentSnapshot], data.isEmpty == false
+        else{
+            print("userInfos is nil")
             return
         }
         self.answerInfos = data
-        DispatchQueue.main.async {
-            self.mainCollectionView.reloadData()
+        self.numOfAnserInfos = data.count
+        defer {
+            DispatchQueue.main.async {
+                self.mainCollectionView.reloadData()
+            }
         }
     }
     
