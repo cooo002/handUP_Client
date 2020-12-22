@@ -27,6 +27,7 @@ class QuestionDetailViewController: UIViewController {
     var answerUID : String?
     var answerInfos : [QueryDocumentSnapshot]?
     var numOfTotalCell = 1 //처음에는 해당 질문만 존재하기 때문에 cell의 갯수를 1로 할당
+    var numOfAnserInfos : Int?
 
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
@@ -101,7 +102,6 @@ extension QuestionDetailViewController: UICollectionViewDataSource, UICollection
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuestionDetailCollectionViewCell", for: indexPath) as? QuestionDetailCollectionViewCell else{
                 return UICollectionViewCell()
             }
-            var numOfAnswer = self.answerInfos?.count as? String //
             guard let keywords = self.questionInfos?["keyword"] as? [String], (questionInfos != nil) else{
                 return cell
             }
@@ -111,7 +111,7 @@ extension QuestionDetailViewController: UICollectionViewDataSource, UICollection
             cell.labelToNumOfQuestionUserAsking.text = self.questionInfos?["questions"] as? String ?? ""
             cell.labelToQuestionUserID.text = self.questionInfos?["writerEmail"] as? String ?? ""
             cell.labelToDate.text =  self.questionInfos?["date"] as? String ?? ""
-            cell.labelToNumOfAnswer.text = "\(numOfAnswer)개의 질문이 있습니다."
+            cell.labelToNumOfAnswer.text = "\(self.numOfAnserInfos ?? 0)개의 질문이 있습니다."
             cell.labelToQuestionKeyWordFirst.text = keywords[0] ?? ""
             cell.labelToQuestionKeyWordSecond.text = keywords[1] ?? ""
             cell.labelToQuestionKeyWordThird.text = keywords[2] ?? ""
@@ -264,6 +264,7 @@ extension QuestionDetailViewController{
             return
         }
         self.answerInfos = data
+        self.numOfAnserInfos = data.count
         defer {
             DispatchQueue.main.async {
                 self.mainCollectionView.reloadData()
